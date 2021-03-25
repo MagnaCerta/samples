@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://schema.opencerta.org/proof",
+    "https://schema.opencerta.org/fhir/202009"
+  ],
+  "type": ["VerifiableCredential", "FHIRCredential"],
+  "id": "urn:uuid:817a735b-d44c-4ffc-a8db-0143d6546b1b",
+  "issuer": "",
+  "credentialSubject": {
+    "type": "FHIRCredential",
+    "id": "urn:uuid:9e629568-aadf-4570-b8cb-746c062cc5cf",
+    "givenName": "Evelyn",
+    "familyName": "Everywoman",
+    "birthDate": "1940-10-10",
+    "gender": "female",
+    "fhirVersion": "4.0.1",
+    "fhirSource": {
+      "resourceType": "Bundle",
+      "type": "collection",
+      "entry": [
+        {
+          "fullUrl": "urn:uuid:9e629568-aadf-4570-b8cb-746c062cc5cf",
+          "resource": {
+            "resourceType": "Patient",
+            "extension": [
+              {
+                "url": "https://github.com/TransparentHealth/800-63-3-trustmark#P",
+                "valueCode": "P0"
+              }
+            ],
+            "name": [
+              {
+                "family": "Everywoman",
+                "given": ["Evelyn"]
+              }
+            ]
+          }
+        },
+        {
+          "resource": {
+            "resourceType": "Immunization",
+            "status": "completed",
+            "occurrenceDateTime": "2021-03-25T17:22:51.182Z",
+            "vaccineCode": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/sid/cvx",
+                  "display": "COVID-19, mRNA, LNP-S, PF, 100 mcg/ 0.5 mL dose",
+                  "code": "207"
+                }
+              ]
+            },
+            "lotNumber": "ASX-3528",
+            "patient": {
+              "reference": "urn:uuid:9e629568-aadf-4570-b8cb-746c062cc5cf"
+            },
+            "reported": false,
+            "wasNotGiven": false
+          }
+        }
+      ]
+    }
+  },
+  "issuanceDate": "2021-03-25T17:22:51.183Z",
+  "proof": {
+    "created": "2021-03-25T17:22:52.473Z",
+    "type": "EcdsaSecp256r1Signature2019",
+    "jws": "eyJhbGciOiJFUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..MEUCIClDiSqf4tkLkRHLZlHy4T3vzU8FKtdi9jC5IyvufxaMAiEA_Ug84maHwob_hmQ3Wy8cgbv8APvnzttvQrYYxiSZeq0",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://issuers.sandbox.magnacerta.com/298122fc8133e807bdd1f0a50b051bee8fc6db48/e79eff946c97c0be95f5708c6d1fb68400218642"
+  }
+}
